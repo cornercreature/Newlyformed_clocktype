@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: #111;
+}
+
+.clock-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: calc(400px * 6 + 16px * 5);
+    margin: 0 auto;
+}
+
+.clock-cell {
+    width: 400px;
+    height: 400px;
+    flex: 0 0 400px;
+}
+
+.clock-cell iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
