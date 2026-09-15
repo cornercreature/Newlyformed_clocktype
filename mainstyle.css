@@ -4,22 +4,34 @@
 
 body {
     margin: 0;
-    padding: 40px 20px;
+    padding: 0 40px 0 20px;
     background: #fdfdfd;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 0 0 0;
+}
+
+h1{
+    font-family: 'Menlo, sans-serif';
+    font-size: 1.5rem;
 }
 
 .clock-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 18px;
     margin: 0 auto;
 }
 
 .clock-cell {
     width: 180px;
     height: 180px;
-    flex: 0 0 200px;
+    flex: 0 0 180px;
     overflow: hidden;
 }
 
