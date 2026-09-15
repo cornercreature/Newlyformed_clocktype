@@ -33,9 +33,9 @@ function draw() {
   translate(width / 2, height / 2);
 
   // Draw the clock background
-  strokeWeight(1);
+  strokeWeight(4);
   stroke("#000");
-  fill("#D9D9D9");
+  fill("#f9f9f9");
   ellipse(0, 0, clockDiameter + 25, clockDiameter + 25);
   fill("#000");
   ellipse(0, 0, 30, 30);
@@ -77,7 +77,7 @@ function draw() {
   // Tick markers around perimeter of clock
   push();
   strokeWeight(1);
-  stroke("#fff");
+  stroke("#000");
   for (let ticks = 0; ticks < 60; ticks += 1) {
     line(0, secondsRadius + 25 , 0, (clockDiameter+14)/2);
     rotate(6);

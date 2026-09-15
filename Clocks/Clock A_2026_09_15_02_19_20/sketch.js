@@ -38,9 +38,9 @@ function draw() {
   
   // Draw the clock background
   ellipseMode(CENTER);
-  strokeWeight(1);
+  strokeWeight(4);
   stroke("#000");
-  fill("#D9D9D9");
+  fill("#f9f9f9");
   ellipse(0, 0, clockDiameter + 25, clockDiameter + 25);
   fill("#000");
   ellipse(0, 0, 30, 30);
@@ -49,21 +49,22 @@ function draw() {
   secondAngle = draggingHand === 'second' ? getMouseAngle() : paused ? pausedSecondAngle : (map(second(), 0, 60, 0, 360) + secondOffset);
   minuteAngle = draggingHand === 'minute' ? getMouseAngle() : paused ? pausedMinuteAngle : (map(minute(), 0, 60, 0, 360) + minuteOffset);
 
+  //arc 1
   noFill();
-  strokeWeight(3);
-  arc(0, 0, minutesRadius, minutesRadius, (minuteAngle - 90), (secondAngle - 90))
+  strokeWeight(16);
+  arc(0, 0, minutesRadius+24, minutesRadius+24, (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
   
   // Second hand  
   push();
   rotate(secondAngle);
-  strokeWeight(4);
+  strokeWeight(10);
   line(0, 0, 0, -(secondsRadius));
   pop();
   
   // Minute hand
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0, 0, 0, - (secondsRadius));
   pop();
@@ -71,7 +72,7 @@ function draw() {
   // Tick markers around perimeter of clock
   push();
   strokeWeight(1);
-  stroke("#fff");
+  stroke("#000");
   for (let ticks = 0; ticks < 60; ticks += 1) {
     line(0, secondsRadius + 25 , 0, (clockDiameter+14)/2);
     rotate(6);
