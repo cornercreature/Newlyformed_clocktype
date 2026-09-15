@@ -5,15 +5,14 @@
 body {
     margin: 0;
     padding: 40px 20px;
-    background: #111;
+    background: #fdfdfd;
 }
 
 .clock-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
-    max-width: calc(200px * 6 + 16px * 5);
+    gap: 20px;
     margin: 0 auto;
 }
 
