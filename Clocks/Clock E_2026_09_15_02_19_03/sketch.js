@@ -11,6 +11,8 @@ let minuteOffset = 0;
 let paused = false;
 let pausedSecondAngle = 0;
 let pausedMinuteAngle = 0;
+let pausedTrailAngle = 0;
+let trailOffset = 0;
 
 function setup() {
 createCanvas(400, 400);
