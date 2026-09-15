@@ -64,7 +64,7 @@ function draw() {
   push();
   rotate(trailAngle+80);
   strokeWeight(6);
-  line(0, (secondsRadius*0.4),0, (secondsRadius*0.6));
+  line(0, (secondsRadius*0.3),0, (secondsRadius*0.8));
   pop();
 
   // Minute hand
@@ -76,14 +76,14 @@ function draw() {
 
   //arc1
   noFill();
-  strokeWeight(20);
-  arc(0, 0, secondsRadius *1.23, secondsRadius *1.23, (minuteAngle -90), (trailAngle-190))
+  strokeWeight(3);
+  arc(0, 0, secondsRadius *1.6, secondsRadius *1.6, (minuteAngle -90), (trailAngle-190))
   stroke("#000");
 
     //arc2
   noFill();
-  strokeWeight(20);
-  arc(0, 0, secondsRadius *0.8, secondsRadius *0.8, (trailAngle-190), (secondAngle -90), )
+  strokeWeight(3);
+  arc(0, 0, secondsRadius *0.58, secondsRadius *0.58, (trailAngle-190), (secondAngle -90), )
   stroke("#000");
   
   
