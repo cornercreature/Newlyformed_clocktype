@@ -69,20 +69,20 @@ function draw() {
 
   // Minute hand
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0,0, 0,  -(secondsRadius));
   pop();
 
   //arc1
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, secondsRadius *1.23, secondsRadius *1.23, (minuteAngle -90), (trailAngle-190))
   stroke("#000");
 
     //arc2
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, secondsRadius *0.8, secondsRadius *0.8, (trailAngle-190), (secondAngle -90), )
   stroke("#000");
   

@@ -65,7 +65,7 @@ function draw() {
   
   // Minute hand
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0,0, 0,  -(secondsRadius));
   pop();

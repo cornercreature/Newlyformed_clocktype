@@ -51,7 +51,7 @@ function draw() {
 
   // ark2
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, (minutesRadius*1.5), (minutesRadius*1.5), (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
   
@@ -64,7 +64,7 @@ function draw() {
   
   // Minute hand A
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0, - (minutesRadius * 0.3), 0, - (minutesRadius * 1.2));
   pop();

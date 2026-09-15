@@ -51,7 +51,7 @@ function draw() {
 
     //arc 1
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, secondsRadius*1.25, secondsRadius*1.25, (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
   
@@ -71,7 +71,7 @@ function draw() {
   
   // Minute hand
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0,0, 0,  -(secondsRadius*0.64));
   pop();

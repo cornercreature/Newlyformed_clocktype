@@ -51,13 +51,13 @@ function draw() {
 
   //arc 1
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, clockDiameter/3., clockDiameter/3., (secondAngle - 110), (minuteAngle - 90))
   stroke("#000");
   
   //arc 2
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, clockDiameter/1.8, clockDiameter/1.8, (secondAngle -90), (minuteAngle - 90))
   stroke("#000");
   
@@ -71,7 +71,7 @@ function draw() {
 
     // Minute hand 2
   push();
-  strokeWeight(3);
+  strokeWeight(4);
   rotate(secondAngle);
   line(0, - (minutesRadius*0.8), 0, - (minutesRadius*1.2));
   pop();

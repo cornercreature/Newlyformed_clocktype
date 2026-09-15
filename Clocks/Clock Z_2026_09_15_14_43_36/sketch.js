@@ -54,7 +54,7 @@ function draw() {
   trailAngle = draggingHand === 'trail' ? getMouseAngle() : paused ? pausedTrailAngle : (-(minuteAngle-secondAngle + 360/2) + trailOffset);
 
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, minutesRadius*1.25, minutesRadius*1.25, (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
   
@@ -74,7 +74,7 @@ function draw() {
   
   // Minute hand
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0, 0, 0, - (secondsRadius*0.52));
   pop();

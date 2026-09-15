@@ -51,19 +51,19 @@ function draw() {
 
   // ark1
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, (minutesRadius*1.2), (minutesRadius*1.2), (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
 
   // ark2
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, (minutesRadius*1.5), (minutesRadius*1.5), (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
 
     // ark3
   noFill();
-  strokeWeight(3);
+  strokeWeight(20);
   arc(0, 0, (minutesRadius*2.4), (minutesRadius*2.4), (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
   
@@ -76,14 +76,14 @@ function draw() {
   
   // Minute hand A
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0, 0, 0, - (minutesRadius * 0.58));
   pop();
 
     // Minute hand A
   push();
-  strokeWeight(6);
+  strokeWeight(4);
   rotate(minuteAngle);
   line(0, - (minutesRadius * 0.76), 0, - (minutesRadius*1.2));
   pop();
