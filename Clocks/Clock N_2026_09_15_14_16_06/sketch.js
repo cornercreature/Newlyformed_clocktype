@@ -2,6 +2,10 @@
 let secondsRadius;
 let minutesRadius;
 let clockDiameter;
+let secondAngle = 0;
+let minuteAngle = 0;
+let trailAngle = 0;
+let draggingHand = null;
 
 function setup() {
 createCanvas(400, 400);
@@ -38,9 +42,9 @@ function draw() {
   ellipse(0, 0, 30, 30);
 
   // Calculate angle for each hand
-  let secondAngle = map(second(), 0, 60, 0, 360);
-  let minuteAngle = map(minute(), 0, 60, 0, 360);
-  let trailAngle = -(minuteAngle - secondAngle + 390 )/2;
+  secondAngle = draggingHand === 'second' ? getMouseAngle() : map(second(), 0, 60, 0, 360);
+  minuteAngle = draggingHand === 'minute' ? getMouseAngle() : map(minute(), 0, 60, 0, 360);
+  trailAngle = draggingHand === 'trail' ? getMouseAngle() : -(minuteAngle - secondAngle + 390 )/2;
   
   // Second hand  
   push();
@@ -87,4 +91,37 @@ function draw() {
   pop();
 
   
+}
+
+
+function getMouseAngle() {
+  return (atan2(mouseX - width / 2, -(mouseY - height / 2)) + 360) % 360;
+}
+
+function angleDiff(a, b) {
+  let d = abs(a - b) % 360;
+  return d > 180 ? 360 - d : d;
+}
+
+function mousePressed() {
+  if (dist(mouseX, mouseY, width / 2, height / 2) > clockDiameter / 2) return;
+  let mAngle = getMouseAngle();
+  let closest = 'second';
+  let closestDiff = angleDiff(mAngle, secondAngle);
+  let minuteDiff = angleDiff(mAngle, minuteAngle);
+  if (minuteDiff < closestDiff) {
+    closest = 'minute';
+    closestDiff = minuteDiff;
+  }
+  let trailDiff = angleDiff(mAngle, trailAngle);
+  if (trailDiff < closestDiff) {
+    closest = 'trail';
+    closestDiff = trailDiff;
+  }
+
+  draggingHand = closest;
+}
+
+function mouseReleased() {
+  draggingHand = null;
 }
