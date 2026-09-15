@@ -6,6 +6,9 @@ let secondAngle = 0;
 let minuteAngle = 0;
 let trailAngle = 0;
 let draggingHand = null;
+let secondOffset = 0;
+let minuteOffset = 0;
+let trailOffset = 0;
 
 function setup() {
 createCanvas(400, 400);
@@ -42,9 +45,9 @@ function draw() {
   ellipse(0, 0, 30, 30);
 
   // Calculate angle for each hand
-  secondAngle = draggingHand === 'second' ? getMouseAngle() : map(second(), 0, 60, 0, 360);
-  minuteAngle = draggingHand === 'minute' ? getMouseAngle() : map(minute(), 0, 60, 0, 360);
-  trailAngle = draggingHand === 'trail' ? getMouseAngle() : -(minuteAngle - secondAngle + 390 )/2;
+  secondAngle = draggingHand === 'second' ? getMouseAngle() : (map(second(), 0, 60, 0, 360) + secondOffset);
+  minuteAngle = draggingHand === 'minute' ? getMouseAngle() : (map(minute(), 0, 60, 0, 360) + minuteOffset);
+  trailAngle = draggingHand === 'trail' ? getMouseAngle() : (-(minuteAngle - secondAngle + 390 )/2 + trailOffset);
   //arc 1
   noFill();
   strokeWeight(3);
@@ -117,5 +120,8 @@ function mousePressed() {
 }
 
 function mouseReleased() {
+  if (draggingHand === 'second') secondOffset = secondAngle - map(second(), 0, 60, 0, 360);
+  if (draggingHand === 'minute') minuteOffset = minuteAngle - map(minute(), 0, 60, 0, 360);
+  if (draggingHand === 'trail') trailOffset = trailAngle - (-(minuteAngle - secondAngle + 390 )/2);
   draggingHand = null;
 }

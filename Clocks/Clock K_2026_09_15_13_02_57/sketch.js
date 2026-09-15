@@ -5,6 +5,8 @@ let clockDiameter;
 let secondAngle = 0;
 let minuteAngle = 0;
 let draggingHand = null;
+let secondOffset = 0;
+let minuteOffset = 0;
 
 function setup() {
 createCanvas(400, 400);
@@ -41,8 +43,8 @@ function draw() {
   ellipse(0, 0, 30, 30);
 
   // Calculate angle for each hand
-  secondAngle = draggingHand === 'second' ? getMouseAngle() : map(second(), 0, 60, 0, 360);
-  minuteAngle = draggingHand === 'minute' ? getMouseAngle() : map(minute(), 0, 60, 0, 360);
+  secondAngle = draggingHand === 'second' ? getMouseAngle() : (map(second(), 0, 60, 0, 360) + secondOffset);
+  minuteAngle = draggingHand === 'minute' ? getMouseAngle() : (map(minute(), 0, 60, 0, 360) + minuteOffset);
 
   //arc 1
   noFill();
@@ -108,5 +110,7 @@ function mousePressed() {
 }
 
 function mouseReleased() {
+  if (draggingHand === 'second') secondOffset = secondAngle - map(second(), 0, 60, 0, 360);
+  if (draggingHand === 'minute') minuteOffset = minuteAngle - map(minute(), 0, 60, 0, 360);
   draggingHand = null;
 }
