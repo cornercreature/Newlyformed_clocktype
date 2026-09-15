@@ -73,7 +73,7 @@ function draw() {
   push();
   strokeWeight(6);
   rotate(minuteAngle);
-  line(0,0, 0,  -(secondsRadius));
+  line(0,0, 0,  -(secondsRadius*0.64));
   pop();
 
   // Tick markers around perimeter of clock
