@@ -108,9 +108,11 @@ function mousePressed() {
     if (paused) {
       pausedSecondAngle = secondAngle;
       pausedMinuteAngle = minuteAngle;
+      pausedTrailAngle = trailAngle;
     } else {
       secondOffset = pausedSecondAngle - map(second(), 0, 60, 0, 360);
       minuteOffset = pausedMinuteAngle - map(minute(), 0, 60, 0, 360);
+      trailOffset = pausedTrailAngle - (-(minuteAngle-secondAngle + 360/2));
     }
     return;
   }
@@ -123,11 +125,19 @@ function mousePressed() {
     closest = 'minute';
     closestDiff = minuteDiff;
   }
+
+    let trailDiff = angleDiff(mAngle, trailAngle);
+  if (trailDiff < closestDiff) {
+    closest = 'trail';
+    closestDiff = trailDiff;
+  }
+
   draggingHand = closest;
 }
 
 function mouseReleased() {
   if (draggingHand === 'second') secondOffset = secondAngle - map(second(), 0, 60, 0, 360);
   if (draggingHand === 'minute') minuteOffset = minuteAngle - map(minute(), 0, 60, 0, 360);
+   if (draggingHand === 'trail') trailOffset = trailAngle - (-(minuteAngle-secondAngle + 360/2));
   draggingHand = null;
 }
