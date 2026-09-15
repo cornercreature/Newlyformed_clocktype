@@ -49,14 +49,14 @@ function draw() {
   // Second hand  
   push();
   rotate(secondAngle);
-  strokeWeight(4);
+  strokeWeight(16);
   line(0, 0, 0, -(secondsRadius*0.9));
   pop();
 
   // Second hand extension 
   push();
   rotate(180+secondAngle);
-  strokeWeight(2);
+  strokeWeight(10);
   line(0, 0, 0, -(secondsRadius));
   pop();
   

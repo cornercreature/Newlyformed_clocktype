@@ -52,14 +52,14 @@ function draw() {
   // Second hand  
   push();
   rotate(secondAngle);
-  strokeWeight(6);
+  strokeWeight(10);
   line(0, 0, 0, -(secondsRadius));
   pop();
 
     // Second trail hand  
   push();
   rotate(secondAngle-60);
-  strokeWeight(6);
+  strokeWeight(16);
   line(0, -(secondsRadius*0.2), 0, -(secondsRadius*0.8));
   pop();
   

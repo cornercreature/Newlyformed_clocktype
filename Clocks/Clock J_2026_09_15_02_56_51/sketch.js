@@ -58,13 +58,13 @@ function draw() {
   // Second hand
   push();
   rotate(secondAngle);
-  strokeWeight(6);
+  strokeWeight(4);
   line(0, - (minutesRadius * 0.6), 0, -(secondsRadius));
   pop();
   
   // Minute hand A
   push();
-  strokeWeight(4);
+  strokeWeight(10);
   rotate(minuteAngle);
   line(0, 0, 0, - (minutesRadius * 1.2));
   pop();

@@ -64,7 +64,7 @@ function draw() {
   // Second hand  
   push();
   rotate(secondAngle);
-  strokeWeight(6);
+  strokeWeight(10);
   line(0, -(secondsRadius*0.27), 0, -(secondsRadius));
   pop();
 
@@ -72,7 +72,7 @@ function draw() {
   push();
   rotate(secondAngle-40);
   strokeWeight(6);
-  line(0, -(secondsRadius*0.9), -15, -(secondsRadius+20));
+  line(0, -(secondsRadius*0.8), -15, -(secondsRadius+20));
   pop();
   
   // Minute hand

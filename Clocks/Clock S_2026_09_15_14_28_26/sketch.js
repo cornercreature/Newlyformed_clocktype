@@ -57,7 +57,7 @@ function draw() {
   // Second hand  
   push();
   rotate(secondAngle);
-  strokeWeight(4);
+  strokeWeight(10);
   line(0, - (secondsRadius*0.53), 0, -(secondsRadius));
   pop();
   

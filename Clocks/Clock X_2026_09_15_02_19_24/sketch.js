@@ -56,7 +56,7 @@ function draw() {
   // Second hand extension 
   push();
   rotate(180+secondAngle);
-  strokeWeight(2);
+  strokeWeight(16);
   line(0, 0, 0, -(secondsRadius));
   pop();
   
@@ -69,7 +69,7 @@ function draw() {
 
   // Minute hand extension
   push();
-  strokeWeight(4);
+  strokeWeight(10);
   rotate(180+minuteAngle);
   line(0, 0, 0, -(minutesRadius * 0.9));
   pop();

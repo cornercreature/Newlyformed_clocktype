@@ -55,14 +55,14 @@ function draw() {
   
   // Minute hand
   push();
-  strokeWeight(4);
+  strokeWeight(10);
   rotate(minuteAngle);
   line(0, 0, 0, - (minutesRadius * 0.7));
   pop();
 
   // Minute hand extension
   push();
-  strokeWeight(4);
+  strokeWeight(16);
   rotate(180+minuteAngle);
   line(0, 0, 0, -(minutesRadius * 0.9));
   pop();
