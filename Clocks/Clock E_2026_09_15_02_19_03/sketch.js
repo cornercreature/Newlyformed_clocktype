@@ -4,6 +4,7 @@ let minutesRadius;
 let clockDiameter;
 let secondAngle = 0;
 let minuteAngle = 0;
+let trailAngle = 0;
 let draggingHand = null;
 let secondOffset = 0;
 let minuteOffset = 0;
@@ -48,17 +49,18 @@ function draw() {
   // Calculate angle for each hand
   secondAngle = draggingHand === 'second' ? getMouseAngle() : paused ? pausedSecondAngle : (map(second(), 0, 60, 0, 360) + secondOffset);
   minuteAngle = draggingHand === 'minute' ? getMouseAngle() : paused ? pausedMinuteAngle : (map(minute(), 0, 60, 0, 360) + minuteOffset);
-
+  trailAngle = draggingHand === 'trail' ? getMouseAngle() : paused ? pausedTrailAngle : (-(minuteAngle - secondAngle )/2 + trailOffset);
+ 
   //arc 1
   noFill();
   strokeWeight(3);
-  arc(0, 0, clockDiameter /2 , clockDiameter/2, (minuteAngle - 90), (secondAngle-200))
+  arc(0, 0, clockDiameter /2 , clockDiameter/2, (minuteAngle - 90), (trailAngle - 450))
   stroke("#000");
 
   //arc 2
   noFill();
   strokeWeight(3);
-  arc(0, 0, clockDiameter - 50, clockDiameter - 50, (minuteAngle - 90), (secondAngle-108))
+  arc(0, 0, clockDiameter - 50, clockDiameter - 50, (minuteAngle - 90), (trailAngle - 420))
   stroke("#000");
   
   // Second hand  
