@@ -52,7 +52,7 @@ function draw() {
   // ark2
   noFill();
   strokeWeight(3);
-  arc(0, 0, (clockDiameter-50), (clockDiameter-50), (minuteAngle - 90), (secondAngle - 90))
+  arc(0, 0, (clockDiameter-50), (clockDiameter-50), (secondAngle - 90),(minuteAngle - 90))
   stroke("#000");
   
   // Second hand
