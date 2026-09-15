@@ -48,11 +48,22 @@ function draw() {
   // Calculate angle for each hand
   secondAngle = draggingHand === 'second' ? getMouseAngle() : paused ? pausedSecondAngle : (map(second(), 0, 60, 0, 360) + secondOffset);
   minuteAngle = draggingHand === 'minute' ? getMouseAngle() : paused ? pausedMinuteAngle : (map(minute(), 0, 60, 0, 360) + minuteOffset);
-
+    // ark1
+  noFill();
+  strokeWeight(16);
+  arc(0, 0, (minutesRadius*0.6), (minutesRadius*0.6), (minuteAngle - 90), (secondAngle - 90))
+  stroke("#000");
+  
   // ark2
   noFill();
-  strokeWeight(20);
-  arc(0, 0, (minutesRadius*1.5), (minutesRadius*1.5), (minuteAngle - 90), (secondAngle - 90))
+  strokeWeight(16);
+  arc(0, 0, (clockDiameter - 50), (clockDiameter - 50), (minuteAngle -110), (minuteAngle - 70))
+  stroke("#000");
+
+    // ark3
+  noFill();
+  strokeWeight(16);
+  arc(0, 0, (clockDiameter - 50), (clockDiameter - 50), (secondAngle -110), (secondAngle - 70))
   stroke("#000");
   
   // Second hand

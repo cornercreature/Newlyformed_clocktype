@@ -29,10 +29,17 @@ h1{
     margin: 0 auto;
 }
 
+.clock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 180px;
+    outline: 1px solid #000;
+}
+
 .clock-cell {
     width: 180px;
     height: 180px;
-    flex: 0 0 180px;
     overflow: hidden;
 }
 
@@ -43,4 +50,11 @@ h1{
     display: block;
     transform: scale(0.45);
     transform-origin: top left;
+}
+
+.clock-label {
+    margin-top: 6px;
+    font-family: Menlo, monospace;
+    font-weight: 400;
+    font-size: 1rem;
 }
