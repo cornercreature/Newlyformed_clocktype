@@ -56,13 +56,13 @@ function draw() {
   //arc 1
   noFill();
   strokeWeight(3);
-  arc(0, 0, clockDiameter /2 , clockDiameter/2, (minuteAngle - 90), (trailAngle - 450))
+  arc(0, 0, clockDiameter /2 , clockDiameter/2, (minuteAngle - 90), ((trailAngle * 0.5) - 90))
   stroke("#000");
 
   //arc 2
   noFill();
   strokeWeight(3);
-  arc(0, 0, clockDiameter - 50, clockDiameter - 50, (minuteAngle - 90), (trailAngle - 400))
+  arc(0, 0, clockDiameter - 50, clockDiameter - 50, (minuteAngle - 90), ((trailAngle * 0.8) - 60))
   stroke("#000");
   
   // Second hand  
