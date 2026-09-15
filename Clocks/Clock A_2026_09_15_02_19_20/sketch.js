@@ -51,7 +51,7 @@ function draw() {
 
   //arc 1
   noFill();
-  strokeWeight(16);
+  strokeWeight(20);
   arc(0, 0, minutesRadius+24, minutesRadius+24, (minuteAngle - 90), (secondAngle - 90))
   stroke("#000");
   
