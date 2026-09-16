@@ -1,7 +1,7 @@
 const headingMessages = [
     "Clocktype. Tik Tok!",
-    "clock centers toggle time pause",
-    "drag clock hands to reposition"
+    "Press center of each clock to pause/play",
+    "Drag clock hands around to reposition"
 ];
 const headingEl = document.querySelector(".infotext");
 let headingIndex = 0;
